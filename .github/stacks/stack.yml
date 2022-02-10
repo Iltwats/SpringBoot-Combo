@@ -21,7 +21,7 @@ inputs:
 configs:
   repo-metadata:
     parameters:
-      description: 'A SpringBoot web application deployed in Azure App Service'
+      description: 'A SpringBoot web application deployed in AWS ElasticBean App Service'
       secrets: 
           - name: AWS_ACCESS_KEY_ID
             value: ${{inputs.AWS_ACCESS_KEY_ID}}
