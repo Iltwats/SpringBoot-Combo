@@ -2,9 +2,6 @@ name: "Setup a spring boot application to Azure App service"
 
 on:
   workflow_dispatch:
-    inputs:
-      AZURE_APP_NAME:
-        required: true
 
 jobs:
   stack-initialization:
