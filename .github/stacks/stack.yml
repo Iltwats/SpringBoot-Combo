@@ -1,30 +1,38 @@
 name: SpringBoot App
 description: This repository provides all boilerplate app and deployment code of the SpringBoot Application
 branding:
-  icon: layers
-  color: blue
+  icon: package
+  color: yellow
 
 inputs:
-  - name: AZURE_APP_SERVICE_NAME
-    description: Enter the name of the Azure App Service
+  - name: AWS_ACCESS_KEY_ID
+    description: Enter Your AWS access key id
     is-secret: false
-    required: false
-  - name: AZURE_WEBAPP_PUBLISH_PROFILE
-    description: Enter the Azure App Service Publish profile
+    required: true
+  - name: AWS_SECRET_ACCESS_KEY
+    description: Enter the secret access key
     is-secret: true
-    required: false
+    required: true
+  - name: AWS_REGION_CODE
+    description: Enter the Region Code for your ElasticBean Project
+    is-secret: false
+    required: true   
     
 configs:
   repo-metadata:
     parameters:
       description: 'A SpringBoot web application deployed in Azure App Service'
       secrets: 
-          - name: AZURE_WEBAPP_PUBLISH_PROFILE
-            value: ${{inputs.AZURE_WEBAPP_PUBLISH_PROFILE}}
+          - name: AWS_ACCESS_KEY_ID
+            value: ${{inputs.AWS_ACCESS_KEY_ID}}
+          - name: AWS_SECRET_ACCESS_KEY
+            value: ${{inputs.AWS_SECRET_ACCESS_KEY}}
+          - name: AWS_REGION_CODE
+            value: ${{inputs.AWS_REGION_CODE}}
       topics:
           - java
           - springboot
-          - azure-app-service
+          - aws-elasticbean-service
           - gradle
   environments:
     - name: development
