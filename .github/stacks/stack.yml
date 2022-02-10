@@ -16,6 +16,7 @@ inputs:
     
 configs:
   repo-metadata:
+    parameters:
       description: 'A SpringBoot web application deployed in Azure App Service'
       topics:
           - java
