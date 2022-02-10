@@ -1,10 +1,59 @@
-name: Azure Web App CI/CD
+name: AWS Elastic Beanstalk Web App CI/CD
 
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
+      - master
+      
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - name: Download JAR
+        #Download the artifact which was uploaded in the build's job
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+      #Deploy the artifact (JAR) into AWS Beanstalk
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v13
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
+          use_existing_version_if_available: false
+          application_name: spring-boot-deploy
+          environment_name: Springbootdeploy-env
+          version_label: ${{github.SHA}}
+          region: ap-south-1
+          deployment_package: gs-spring-boot-0.0.1-SNAPSHOT.jar
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Download JAR
+        #Download the artifact which was uploaded in the build's job
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+      #Deploy the artifact (JAR) into AWS Beanstalk
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v13
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
+          use_existing_version_if_available: false
+          application_name: spring-boot-deploy
+          environment_name: Springbootdeploy-env
+          version_label: ${{github.SHA}}
+          region: ap-south-1
+          deployment_package: gs-spring-boot-0.0.1-SNAPSHOT.jar
