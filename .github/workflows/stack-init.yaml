@@ -1,4 +1,4 @@
-name: "Setup and deploy a nodejs site to Azure App service"
+name: "Setup a spring boot application to Azure App service"
 
 on:
   workflow_dispatch:
@@ -39,12 +39,6 @@ jobs:
           check-latest: true
           
       - run: ./gradlew build --no-daemon
-      
-      - name: Configure git
-        run: |
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git config --global user.name "${{ github.actor }}"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       
       - name: Commit files
         run: |
