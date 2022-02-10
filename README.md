@@ -1,2 +1,1 @@
-# Spring-stack
-Java spring stack
+# SpringBoot Application
