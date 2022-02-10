@@ -13,7 +13,6 @@ inputs:
     description: Enter the Azure App Service Publish profile
     is-secret: true
     required: false
-    default: ''
     
 configs:
   repo-metadata:
