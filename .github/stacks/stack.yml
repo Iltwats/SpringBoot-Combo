@@ -13,17 +13,22 @@ inputs:
     description: Enter the Azure App Service Publish profile
     is-secret: true
     required: false
+    default: ''
     
 configs:
   repo-metadata:
     parameters:
       description: 'A SpringBoot web application deployed in Azure App Service'
+      secrets: 
+          - name: AZURE_WEBAPP_PUBLISH_PROFILE
+            value: ${{inputs.AZURE_WEBAPP_PUBLISH_PROFILE}}
       topics:
           - java
           - springboot
           - azure-app-service
           - gradle
-
+  branches:
+    - name: main
   environments:
     - name: development
       parameters:
@@ -31,7 +36,6 @@ configs:
         allowed-branch-rules:
           - master
           - releases/*
-
 
 init:
   uses: "stack-init.yaml"
