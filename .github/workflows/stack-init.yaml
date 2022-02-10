@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: development
-      url: ${{ steps.get-url.outputs.your_site }}
     steps:
       - run: echo "Creating and deploying a spring boot application to AWS Elastic app service"
       - name: checkout
