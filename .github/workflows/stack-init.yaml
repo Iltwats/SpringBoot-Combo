@@ -1,4 +1,4 @@
-name: "Setup a spring boot application to Azure App service"
+name: "Setup a spring boot application to AWS Elastic App service"
 
 on:
   workflow_dispatch:
@@ -10,11 +10,13 @@ jobs:
       name: development
       url: ${{ steps.get-url.outputs.your_site }}
     steps:
-      - run: echo "Creating and deploying a spring boot application to azure app service"
+      - run: echo "Creating and deploying a spring boot application to AWS Elastic app service"
       - name: checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+       
+      # moving the template code to main repository  
       - name: move the file
         run: |
           mv ./Spring/gradle ./gradle
@@ -27,6 +29,7 @@ jobs:
           mv ./Spring/settings.gradle ./settings.gradle
           rm -r ./Spring
       
+      # Setting up environment
       - name: Setup Java JDK
         uses: actions/setup-java@v2.5.0
         with:
@@ -34,9 +37,9 @@ jobs:
           java-version: '8'
           cache: 'gradle'
           check-latest: true
-          
       - run: ./gradlew build --no-daemon
       
+      # Git Options
       - name: Configure git
         run: |
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
@@ -48,3 +51,16 @@ jobs:
           git add .
           git commit -m "Generate framework code and initialize workflows"
           git push
+       
+       # Build and Upload the artifact to be used for CI-CD   
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
+        with:
+          arguments: build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: build/libs/
+        
