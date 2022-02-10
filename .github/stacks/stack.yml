@@ -8,19 +8,16 @@ inputs:
   - name: AZURE_APP_SERVICE_NAME
     description: Enter the name of the Azure App Service
     is-secret: false
-    required: true
+    required: false
   - name: AZURE_WEBAPP_PUBLISH_PROFILE
     description: Enter the Azure App Service Publish profile
     is-secret: true
-    required: true
+    required: false
 
 configs:
   repo-metadata:
     parameters:
       description: 'A SpringBoot web application deployed in Azure App Service'
-      secrets:
-        - name: AZURE_WEBAPP_PUBLISH_PROFILE
-          value: ${{inputs.AZURE_WEBAPP_PUBLISH_PROFILE}}
       topics:
           - java
           - springboot
