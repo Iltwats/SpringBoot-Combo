@@ -26,8 +26,6 @@ configs:
           - springboot
           - azure-app-service
           - gradle
-  branches:
-    - name: main
   environments:
     - name: development
       parameters:
