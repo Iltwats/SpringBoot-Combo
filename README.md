@@ -26,8 +26,8 @@ Note: Once you create a repo out of this stack, you can find your website deploy
 Follow the step-by-step guide given on [AWS official doc](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html)
 
 - Note: You will have to create a BeanStalk deployment app in your AWS profile for the code deploymet to take place. This stack will deploy the start code for application to your AWS BeanStalk. Checkout this [AWS Documentation](https://aws.amazon.com/elasticbeanstalk/) to learn more about creating AWS Elastic BeanStalk deployment.
-
-App hosted URL Link : ✈️
+---
+### App hosted URL Link : ✈️
 ```
 You could find the link to it here: 
 Elastic Beanstalk >> Environments >> Springbootdeploy-env (your environment name)
@@ -47,10 +47,10 @@ open http://localhost:8080/
 ```
 ---
 ### Learn more
-- Spring boot 
+- Spring boot <br>
      Visit [Spring](https://spring.io/guides) view the full documentation.
 
-- AWS Cloud
+- AWS Cloud <br>
      Learn more about [AWS](https://aws.amazon.com/elasticbeanstalk/) from the official site.
 ---
 ### Contributors
