@@ -1,16 +1,15 @@
-[![Use this stack](https://github.com/stack-instance/badge.svg)](https://github.com/stack-instance?stack_template_owner=Iltwats&stack_template_repo=java-springboot-aws)
      
 # SpringBoot Application
 
-A GitHub Stack to develop, preview, and deploy an Spring Boot application to AWS Elastic service in seconds.
+A GitHub template to develop, preview, and deploy an Spring Boot application to AWS Elastic service in seconds.
 
-## Why should you use this GitHub Stack?
+## Why should you use this GitHub Template?
 You can spin up your own Java + SpringBoot application in seconds. Deployment happens on an AWS Elastic BeanStalk Service.
 
-The stack also sets up a proper Github CI/CD environment.
-Note: Once you create a repo out of this stack, you can find your website deployed at your environment created in Beanstalk.
+The template also sets up a proper Github CI/CD environment.
+Note: Once you create a repo out of this template, you can find your website deployed at your environment created in Beanstalk.
 
-### What are the inputs to pass while setting up the stack?
+### What are the inputs to pass while setting up the template?
 ```
 # Your AWS Access Key ID
 - AWS_ACCESS_KEY_ID
@@ -25,7 +24,7 @@ Note: Once you create a repo out of this stack, you can find your website deploy
 #### How to get AWS Credentials? 🔑
 Follow the step-by-step guide given on [AWS official doc](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html)
 
-- Note: You will have to create a BeanStalk deployment app in your AWS profile for the code deploymet to take place. This stack will deploy the start code for application to your AWS BeanStalk. Checkout this [AWS Documentation](https://aws.amazon.com/elasticbeanstalk/) to learn more about creating AWS Elastic BeanStalk deployment.
+- Note: You will have to create a BeanStalk deployment app in your AWS profile for the code deploymet to take place. This template will deploy the start code for application to your AWS BeanStalk. Checkout this [AWS Documentation](https://aws.amazon.com/elasticbeanstalk/) to learn more about creating AWS Elastic BeanStalk deployment.
 ---
 ### App hosted URL Link : ✈️
 ```
