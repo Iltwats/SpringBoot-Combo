@@ -19,7 +19,6 @@ jobs:
       # restructure repository
       - name: move the file
         run: |
-          mv .github/workflows/stack-init.yml .github/workflows/init.yml
           mv ./Spring/gradle ./gradle
           mv ./Spring/src ./src
           mv ./Spring/.gitignore ./.gitignore
