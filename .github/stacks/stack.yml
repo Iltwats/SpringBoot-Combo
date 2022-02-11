@@ -7,7 +7,7 @@ branding:
 inputs:
   - name: AWS_ACCESS_KEY_ID
     description: Enter Your AWS access key id
-    is-secret: false
+    is-secret: true
     required: true
   - name: AWS_SECRET_ACCESS_KEY
     description: Enter the secret access key
@@ -15,7 +15,7 @@ inputs:
     required: true
   - name: AWS_REGION_CODE
     description: Enter the Region Code for your ElasticBean Project
-    is-secret: false
+    is-secret: true
     required: true   
     
 configs:
