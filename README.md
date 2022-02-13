@@ -1,12 +1,13 @@
      
 # SpringBoot Application
 
-A GitHub template to develop, preview, and deploy an Spring Boot application to AWS Elastic service in seconds.
+A GitHub template to develop, preview, and deploy a Spring Boot application to AWS Elastic service in seconds.
+This template sets up [this tutorial](https://spring.io/guides/gs/spring-boot/) from Spring Boot site to get you started.
 
 ## Why should you use this GitHub Template?
 You can spin up your own Java + SpringBoot application in seconds. Deployment happens on an AWS Elastic BeanStalk Service.
 
-The template also sets up a proper Github CI/CD environment.
+The template also sets up a proper GitHub CI/CD environment.
 Note: Once you create a repo out of this template, you can find your website deployed at your environment created in Beanstalk.
 
 ### What are the inputs to pass while setting up the template?
@@ -24,7 +25,7 @@ Note: Once you create a repo out of this template, you can find your website dep
 #### How to get AWS Credentials? 🔑
 Follow the step-by-step guide given on [AWS official doc](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html)
 
-- Note: You will have to create a BeanStalk deployment app in your AWS profile for the code deploymet to take place. This template will deploy the start code for application to your AWS BeanStalk. Checkout this [AWS Documentation](https://aws.amazon.com/elasticbeanstalk/) to learn more about creating AWS Elastic BeanStalk deployment.
+- Note: You will have to create a BeanStalk deployment app in your AWS profiles for the code deployment to take place. This template will deploy the start code for application to your AWS BeanStalk. Checkout this [AWS Documentation](https://aws.amazon.com/elasticbeanstalk/) to learn more about creating AWS Elastic BeanStalk deployment.
 ---
 ### App hosted URL Link : ✈️
 ```
@@ -32,7 +33,7 @@ You could find the link to it here:
 Elastic Beanstalk >> Environments >> Springbootdeploy-env (your environment name)
 ```
 ---
-### How to setup local development server?
+### How to set up local development server?
 ```
 to start a local development environment, and view in browser.
 ./gradlew bootRun
@@ -47,10 +48,10 @@ open http://localhost:8080/
 ---
 ### Learn more
 - Spring boot <br>
-     Visit [Spring](https://spring.io/guides) view the full documentation.
+     Visit [Spring](https://spring.io/guides) views the full documentation.
 
 - AWS Cloud <br>
      Learn more about [AWS](https://aws.amazon.com/elasticbeanstalk/) from the official site.
 ---
 ### Contributors
-- Atul Sharma (@Iltwats)
+- Atul Sharma ([@Iltwats_Atul](https://twitter.com/Iltwats_Atul))
