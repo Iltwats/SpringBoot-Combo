@@ -48,7 +48,7 @@ open http://localhost:8080/
 ---
 ### Learn more
 - Spring boot <br>
-     Visit [Spring](https://spring.io/guides) views the full documentation.
+     Visit [Spring](https://spring.io/guides) official site to view the full documentation.
 
 - AWS Cloud <br>
      Learn more about [AWS](https://aws.amazon.com/elasticbeanstalk/) from the official site.
