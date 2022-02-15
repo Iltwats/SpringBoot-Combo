@@ -16,7 +16,17 @@ inputs:
   - name: AWS_REGION_CODE
     description: Enter the Region Code for your ElasticBean Project
     is-secret: true
-    required: true   
+    required: true
+  - name: APPROVING_REVIEWERS_REQUIRED
+    description: Number of reviewers required to approve pull requests
+    default: 1
+    validvalues:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
     
 configs:
   repo-metadata:
@@ -32,8 +42,24 @@ configs:
       topics:
           - java
           - springboot
-          - aws-elasticbean-service
+          - aws-beanstalk-service
           - gradle
+  branches:
+    - name: master
+      parameters:
+        allow-force-pushes: false
+        allow-deletions: false
+        enforce-admins: true
+        required-pull-request-reviews:
+          dismiss-stale-reviews: true
+          require-code-owner-reviews: true
+          required-approving-review-count: ${{ inputs.APPROVING_REVIEWERS_REQUIRED }}
+  security:
+    parameters:
+      # Enables dependabot security updates
+      automated-security-fixes: true
+      # Enables dependabot alerts and the dependency graph for a repository.
+      vulnerability-alerts: true
   environments:
     - name: development
       parameters:
@@ -41,6 +67,9 @@ configs:
         allowed-branch-rules:
           - master
           - releases/*
+  github-apps:
+    # Automatically close stale Issues and Pull Requests that tend to accumulate during a project.
+    - slug: stale
 
 init:
   uses: "stack-init.yaml"
