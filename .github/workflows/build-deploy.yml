@@ -48,15 +48,9 @@ jobs:
           name: Package
 
       #Read region code from region-code.json file
-      - name: Read json file
-        id: set_var
-        run: |
-          content=`cat ./region-code.json`
-          echo "::set-output name=packageJson::$content"
-      - run: |
-          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
-          regionName = "${{fromJson(steps.set_var.outputs.packageJson).version}}"
-
+      - name: Read region name from file
+        id: getRegionName
+        run: echo "::set-output name=regionName::$(cat regionName)"
 
       #Deploy the artifact (JAR) into AWS Beanstalk
       - name: Deploy to EB
@@ -64,7 +58,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: $regionName
+          region: ${{ steps.getRegionName.outputs.regionName }}
           use_existing_version_if_available: false
           application_name: spring-boot-deploy
           environment_name: Springbootdeploy-env
