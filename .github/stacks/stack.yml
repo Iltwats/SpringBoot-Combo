@@ -17,16 +17,6 @@ inputs:
     description: Enter the Region Code for your ElasticBean Project
     is-secret: false
     required: true
-#  - name: APPROVING_REVIEWERS_REQUIRED
-#    description: Number of reviewers required to approve pull requests
-#    default: 1
-#    validvalues:
-#      - 1
-#      - 2
-#      - 3
-#      - 4
-#      - 5
-#      - 6
     
 configs:
   repo-metadata:
@@ -42,7 +32,8 @@ configs:
           - springboot
           - aws-beanstalk-service
           - gradle
-
+          - mysql
+          - azure-sql
   security:
     parameters:
       # Enables dependabot security updates

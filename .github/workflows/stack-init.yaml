@@ -32,6 +32,7 @@ jobs:
           mv ./Spring/settings.gradle ./settings.gradle
           rm -r ./Spring
 
+      # create a file to store region code
       - name: create a file and store AWS_REGION_CODE
         run: |
           regionName="${{ github.event.inputs.AWS_REGION_CODE }}"
