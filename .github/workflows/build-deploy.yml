@@ -47,13 +47,24 @@ jobs:
         with:
           name: Package
 
+      #Read region code from region-code.json file
+      - name: Read json file
+        id: region
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./region-code.json
+        run: |
+          echo "${ steps.region.outputs.contents }"
+          regionName = ${{fromJson(steps.region.outputs.contents).region}}
+          echo regionName
+
       #Deploy the artifact (JAR) into AWS Beanstalk
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v13
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: ${{secrets.AWS_REGION_CODE}}
+          region: regionName
           use_existing_version_if_available: false
           application_name: spring-boot-deploy
           environment_name: Springbootdeploy-env

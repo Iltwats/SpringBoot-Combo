@@ -15,7 +15,7 @@ inputs:
     required: true
   - name: AWS_REGION_CODE
     description: Enter the Region Code for your ElasticBean Project
-    is-secret: true
+    is-secret: false
     required: true
   - name: APPROVING_REVIEWERS_REQUIRED
     description: Number of reviewers required to approve pull requests
@@ -37,8 +37,6 @@ configs:
             value: ${{inputs.AWS_ACCESS_KEY_ID}}
           - name: AWS_SECRET_ACCESS_KEY
             value: ${{inputs.AWS_SECRET_ACCESS_KEY}}
-          - name: AWS_REGION_CODE
-            value: ${{inputs.AWS_REGION_CODE}}
       topics:
           - java
           - springboot
@@ -70,7 +68,7 @@ configs:
 github-apps:
   # Automatically close stale Issues and Pull Requests that tend to accumulate during a project.
   - slug: stale
-  - slug: codefactor-io
+  # Automated code reviews to help developer ship better software, faster
   - slug: codacy-production
 init:
   uses: "stack-init.yaml"
