@@ -71,6 +71,6 @@ github-apps:
   # Automatically close stale Issues and Pull Requests that tend to accumulate during a project.
   - slug: stale
   - slug: codefactor-io
-  - slug: Codacy-Production
+  - slug: codacy-production
 init:
   uses: "stack-init.yaml"
