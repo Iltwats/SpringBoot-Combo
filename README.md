@@ -1,13 +1,17 @@
      
 # SpringBoot Application
-
 A GitHub template to develop, preview, and deploy a Spring Boot application to AWS Elastic service in seconds.
-This template sets up [this tutorial](https://spring.io/guides/gs/spring-boot/) from Spring Boot site to get you started.
 
 ## Why should you use this GitHub Template?
 You can spin up your own Java + SpringBoot application in seconds. Deployment happens on an AWS Elastic BeanStalk Service.
 
-The template also sets up a proper GitHub CI/CD environment.
+This template integrates following tools and practices to maker your workflow easier:
+ - Combines two getting started guides, [starter](https://spring.io/guides/gs/spring-boot/) and [sql](https://spring.io/guides/gs/accessing-data-mysql/) to get you started fast.
+ - Sets up a proper GitHub CI/CD environment, supported by GitHub actions.
+ - Docker support to run applications
+ - GitHub apps [Stale](https://github.com/marketplace/stale) and [Codacy](https://github.com/marketplace/codacy) enabled for your complete code coverage.
+ - Enable branch protection rules
+ - Support to quickly change from local sql-server to azure-sql-server with a snap.
 Note: Once you create a repo out of this template, you can find your website deployed at your environment created in Beanstalk.
 
 ### What are the inputs to pass while setting up the template?
