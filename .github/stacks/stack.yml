@@ -70,7 +70,6 @@ configs:
 github-apps:
     # Automatically close stale Issues and Pull Requests that tend to accumulate during a project.
     - slug: stale
-    - slug: codacy
     - slug: codefactor
 
 init:
