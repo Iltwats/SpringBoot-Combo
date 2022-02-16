@@ -2,6 +2,9 @@ name: "Setup a spring boot application to AWS Elastic App service"
 
 on:
   workflow_dispatch:
+   inputs:
+     AWS_REGION_CODE:
+       required: true
 
 jobs:
   stack-initialization:

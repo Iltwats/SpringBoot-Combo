@@ -53,6 +53,7 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: ./region-code.json
+      - name: extract the variable
         run: |
           echo "${ steps.region.outputs.contents }"
           regionName = ${{fromJson(steps.region.outputs.contents).region}}
