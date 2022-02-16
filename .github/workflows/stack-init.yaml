@@ -35,7 +35,7 @@ jobs:
       - name: create a file and store AWS_REGION_CODE
         run: |
           regionName="${{ github.event.inputs.AWS_REGION_CODE }}"
-          echo "{"region":$regionName"} > ./region-code.json
+          echo "{"region":"$regionName"}" > ./region-code.json
 
       # Setting up environment and checking builds
       - name: Setup Java JDK

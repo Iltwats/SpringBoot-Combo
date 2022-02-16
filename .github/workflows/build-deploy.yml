@@ -49,15 +49,13 @@ jobs:
 
       #Read region code from region-code.json file
       - name: Read json file
-        id: region
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: ./region-code.json
-      - name: extract the variable
-        run: |
-          echo "${ steps.region.outputs.contents }"
-          regionName = ${{fromJson(steps.region.outputs.contents).region}}
-          echo regionName
+      - id: set_var
+      - run: |
+          content=`cat ./region-code.json`
+          echo "::set-output name=packageJson::$content"
+      - run: |
+          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+
 
       #Deploy the artifact (JAR) into AWS Beanstalk
       - name: Deploy to EB
