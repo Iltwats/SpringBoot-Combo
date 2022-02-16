@@ -31,11 +31,13 @@ class ApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
     }
-    */
+
 
     @Test
     void version() {
         assertEquals( "The actual version is 1.0.0", helloController.version());
     }
+
+    */
 
 }
