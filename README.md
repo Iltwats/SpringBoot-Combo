@@ -10,8 +10,9 @@ This template integrates following tools and practices to maker your workflow ea
  - Sets up a proper GitHub CI/CD environment, supported by GitHub actions.
  - Docker support to run applications
  - GitHub apps [Stale](https://github.com/marketplace/stale) and [Codacy](https://github.com/marketplace/codacy) enabled for your complete code coverage.
- - Enable branch protection rules
- - Support to quickly change from local sql-server to azure-sql-server with a snap.
+ - Enabled branch protection rules
+ - Support to quickly change from `local sql-server` to `azure-sql-server` with a snap.
+
 Note: Once you create a repo out of this template, you can find your website deployed at your environment created in Beanstalk.
 
 ### What are the inputs to pass while setting up the template?
