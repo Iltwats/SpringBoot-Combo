@@ -3,7 +3,7 @@
 A GitHub template to develop, preview, and deploy a Spring Boot application to AWS Elastic service in seconds.
 
 ## Why should you use this GitHub Template?
-You can spin up your own Java + SpringBoot application in seconds. Deployment happens on an AWS Elastic BeanStalk Service.
+You can spin up your own Java + Spring Boot application in seconds. Deployment happens on an AWS Elastic BeanStalk Service.
 
 This template integrates following tools and practices to maker your workflow easier:
  - Combines two getting started guides, [starter](https://spring.io/guides/gs/spring-boot/) and [sql](https://spring.io/guides/gs/accessing-data-mysql/) to get you started fast.

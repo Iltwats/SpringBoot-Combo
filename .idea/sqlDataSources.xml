@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="f9548c42-ecc4-497d-8c46-397965cb2fe8" name="spring Mapping">
+      <data-sources db="9ac7a963-6b65-4b65-aedc-f2038b42d809" ddl="378a932f-6141-4af4-ba64-a8a7fd45fad5" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="378a932f-6141-4af4-ba64-a8a7fd45fad5" />
+          <option name="name" value="spring (DDL)" />
+          <option name="languageId" value="AZURE" />
+          <option name="urls">
+            <array />
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
